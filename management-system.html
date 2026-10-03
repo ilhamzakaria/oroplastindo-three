@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Sistem Manajemen – PT Oro Plastindo</title>
+  <meta name="description" content="Komitmen PT Oro Plastindo terhadap kualitas melalui sertifikasi ISO 9001:2015, Halal MUI, kepatuhan BPOM, dan metodologi Kaizen.">
+  <meta name="keywords" content="ISO 9001, halal, BPOM, kaizen, sistem manajemen mutu, oro plastindo">
+  <meta name="author" content="PT Oro Plastindo">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3/dist/css/glightbox.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <style>
+    /* ---- PAGE HERO ---- */
+    .page-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      padding: 90px 0 70px;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -40%; right: -8%;
+      width: 500px; height: 500px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+    .page-hero .container { position: relative; z-index: 1; }
+    .page-hero h1 { color: #fff; font-size: 48px; margin-bottom: 16px; }
+    .page-hero .lead { color: rgba(255,255,255,0.88); font-size: 18px; margin-bottom: 24px; }
+    .breadcrumb-item a { color: rgba(255,255,255,0.75); text-decoration: none; }
+    .breadcrumb-item.active { color: rgba(255,255,255,0.95); }
+    .breadcrumb-item + .breadcrumb-item::before { color: rgba(255,255,255,0.6); }
+
+    /* ---- CTA SECTION ---- */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff; padding: 90px 0; text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; top: -40%; right: -8%;
+      width: 500px; height: 500px;
+      background: rgba(245,166,35,0.12); border-radius: 50%;
+    }
+    .cta-section .container { position: relative; z-index: 1; }
+    .btn-white { background: #fff; color: var(--primary); border: 2px solid #fff; font-weight: 700; }
+    .btn-white:hover { background: var(--primary-light); color: #fff; border-color: var(--primary-light); }
+    .btn-outline-white { background: transparent; color: #fff; border: 2px solid #fff; font-weight: 700; }
+    .btn-outline-white:hover { background: #fff; color: var(--primary); }
+
+    /* ---- SYSTEM CARDS ---- */
+    .sys-card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:var(--shadow-md); cursor:pointer; transition:all .3s; }
+    .sys-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+    .sys-card.active { border:3px solid var(--primary); }
+    .sys-header { background:linear-gradient(135deg,var(--primary),var(--primary-light)); color:#fff; padding:36px 20px; text-align:center; }
+    .sys-num { font-size:52px; font-weight:800; line-height:1; margin-bottom:12px; }
+    .sys-title { font-size:20px; font-weight:700; margin-bottom:4px; }
+    .sys-sub { font-size:13px; opacity:.9; }
+    .sys-body { padding:24px; display:none; }
+    .sys-body.active { display:block; }
+    .sys-body p { color:var(--gray); font-size:14px; line-height:1.8; margin-bottom:16px; }
+
+    /* ---- ACCORDION ---- */
+    .acc-header { background:linear-gradient(135deg,#f5f5f5,#ebebeb); padding:18px 20px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-weight:600; color:var(--dark); border-radius:8px 8px 0 0; }
+    .acc-header:hover { background:linear-gradient(135deg,#eeeeee,#e0e0e0); }
+    .acc-icon { font-size:20px; transition:transform .3s; }
+    .acc-content { padding:20px; display:none; background:#fff; border:1px solid var(--border); border-top:none; border-radius:0 0 8px 8px; color:var(--gray); }
+    .acc-content.open { display:block; }
+    .benefit-list { list-style:none; padding:0; margin:0; }
+    .benefit-list li { padding:7px 0 7px 28px; position:relative; color:var(--dark-gray); font-size:14px; }
+    .benefit-list li::before { content:'✓'; position:absolute; left:0; color:var(--primary); font-weight:700; }
+
+    @media (max-width: 768px) {
+      .page-hero h1 { font-size: 32px; }
+      .sys-num { font-size: 38px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="index.html" class="navbar-brand">
+      <img src="assets/img/images/logo.png" alt="Logo Oro Plastindo">
+    </a>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="index.html"             class="nav-link">Beranda</a></li>
+      <li class="nav-item"><a href="about.html"             class="nav-link">Tentang Kami</a></li>
+      <li class="nav-item"><a href="products.html"          class="nav-link">Produk</a></li>
+      <li class="nav-item"><a href="management-system.html" class="nav-link active">Manajemen</a></li>
+      <li class="nav-item"><a href="clients.html"           class="nav-link">Klien</a></li>
+      <li class="nav-item"><a href="news.html"              class="nav-link">Berita</a></li>
+      <li class="nav-item"><a href="career.html"            class="nav-link">Karir</a></li>
+      <li class="nav-item"><a href="contact.html"           class="nav-link">Kontak</a></li>
+    </ul>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ========== PAGE HERO ========== -->
+<section class="page-hero">
+  <div class="container" data-aos="fade-up">
+    <h1>Sistem Manajemen / Management Systems</h1>
+    <p class="lead">Komitmen kami terhadap kualitas, keamanan, dan perbaikan berkelanjutan di setiap aspek bisnis</p>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="index.html">Beranda / Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Sistem Manajemen / Management</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- ========== SECTION 1: SISTEM TERSERTIFIKASI ========== -->
+<section class="section" style="background:linear-gradient(135deg,#f0fae8,#e6f5d8);">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Sistem Tersertifikasi Kami / Our Certified Systems</h2>
+      <p>Empat pilar utama yang menopang komitmen kami terhadap kualitas, keamanan, dan inovasi berkelanjutan</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:28px;" data-aos="fade-up" data-aos-delay="100">
+
+      <!-- Card 01 -->
+      <div class="sys-card active" data-index="0">
+        <div class="sys-header">
+          <div class="sys-num">01</div>
+          <div class="sys-title">ISO 9001:2015</div>
+          <div class="sys-sub">Manajemen Mutu / Quality Management</div>
+        </div>
+        <div class="sys-body active">
+          <p>Tersertifikasi ISO 9001:2015 memastikan konsistensi kualitas dan perbaikan berkelanjutan di seluruh operasional kami. Standar internasional ini menjadi landasan sistem manajemen mutu yang kami terapkan setiap hari untuk kepuasan pelanggan maksimal. Our commitment to continuous improvement benefits every customer we serve.</p>
+          <a href="contact.html" class="btn btn-sm btn-primary" style="width:100%;display:block;text-align:center;">Pelajari Lebih / Learn More</a>
+        </div>
+      </div>
+
+      <!-- Card 02 -->
+      <div class="sys-card" data-index="1">
+        <div class="sys-header">
+          <div class="sys-num">02</div>
+          <div class="sys-title">Sertifikasi Halal / Halal</div>
+          <div class="sys-sub">Jaminan Keamanan Pangan / Food Safety</div>
+        </div>
+        <div class="sys-body">
+          <p>Tersertifikasi Halal oleh MUI, menjamin keamanan pangan sesuai prinsip-prinsip Islam dan standar keamanan internasional. Sertifikasi ini membuktikan bahwa setiap produk kami aman dan sesuai dengan ketentuan halal yang berlaku di Indonesia dan pasar global. We take food safety and consumer protection very seriously.</p>
+          <a href="contact.html" class="btn btn-sm btn-primary" style="width:100%;display:block;text-align:center;">Pelajari Lebih / Learn More</a>
+        </div>
+      </div>
+
+      <!-- Card 03 -->
+      <div class="sys-card" data-index="2">
+        <div class="sys-header">
+          <div class="sys-num">03</div>
+          <div class="sys-title">Keamanan Pangan / Food Safety</div>
+          <div class="sys-sub">Kepatuhan BPOM / BPOM Compliance</div>
+        </div>
+        <div class="sys-body">
+          <p>Mematuhi regulasi BPOM untuk bahan yang kontak langsung dengan makanan dan minuman adalah prioritas utama. Kepatuhan penuh terhadap standar BPOM memastikan setiap produk kami aman digunakan oleh konsumen akhir dengan risiko kontaminasi minimal. We maintain the highest standards for direct food contact materials.</p>
+          <a href="contact.html" class="btn btn-sm btn-primary" style="width:100%;display:block;text-align:center;">Pelajari Lebih / Learn More</a>
+        </div>
+      </div>
+
+      <!-- Card 04 -->
+      <div class="sys-card" data-index="3">
+        <div class="sys-header">
+          <div class="sys-num">04</div>
+          <div class="sys-title">Kaizen / Continuous Improvement</div>
+          <div class="sys-sub">Perbaikan Berkelanjutan / Lean Philosophy</div>
+        </div>
+        <div class="sys-body">
+          <p>Menerapkan metodologi perbaikan berkelanjutan untuk meningkatkan efisiensi dan produktivitas di setiap lini operasional. Filosofi Kaizen mendorong seluruh tim kami untuk terus berinovasi dan menemukan cara-cara baru yang lebih baik. Through continuous improvement, we reduce waste and increase value for customers.</p>
+          <a href="contact.html" class="btn btn-sm btn-primary" style="width:100%;display:block;text-align:center;">Pelajari Lebih / Learn More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 2: DETAIL SISTEM (ACCORDION) ========== -->
+<section class="section">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Detail Sistem / System Details</h2>
+      <p>Penjelasan mendalam mengenai setiap sistem manajemen yang kami terapkan untuk excellence</p>
+    </div>
+    <div style="max-width:900px;margin:0 auto;">
+
+      <!-- Accordion 1: ISO 9001:2015 -->
+      <div class="mb-3" data-aos="fade-up">
+        <div class="acc-header" onclick="toggleAccordion(this)">
+          <span>
+            <i class="bi bi-shield-check me-2" style="color:var(--primary);"></i>
+            <strong>ISO 9001:2015 – Manajemen Mutu</strong>
+          </span>
+          <i class="bi bi-chevron-down acc-icon"></i>
+        </div>
+        <div class="acc-content">
+          <p style="margin-bottom:16px;">ISO 9001:2015 adalah standar internasional untuk sistem manajemen mutu. Sertifikasi ini menegaskan komitmen PT Oro Plastindo dalam memberikan produk yang konsisten memenuhi persyaratan pelanggan dan regulasi yang berlaku. Kami menerapkan siklus PDCA (Plan-Do-Check-Act) secara menyeluruh di setiap proses produksi.</p>
+          <ul class="benefit-list">
+            <li>Pengendalian dokumen dan proses</li>
+            <li>Evaluasi kinerja</li>
+            <li>Tindakan korektif dan preventif</li>
+            <li>Tinjauan manajemen</li>
+            <li>Peningkatan berkelanjutan</li>
+            <li>Fokus dan kepuasan pelanggan</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Accordion 2: Halal MUI -->
+      <div class="mb-3" data-aos="fade-up" data-aos-delay="50">
+        <div class="acc-header" onclick="toggleAccordion(this)">
+          <span>
+            <i class="bi bi-check-circle me-2" style="color:var(--secondary);"></i>
+            <strong>Sertifikasi Halal MUI</strong>
+          </span>
+          <i class="bi bi-chevron-down acc-icon"></i>
+        </div>
+        <div class="acc-content">
+          <p style="margin-bottom:16px;">Sertifikasi Halal dari Majelis Ulama Indonesia (MUI) membuktikan bahwa seluruh bahan baku dan proses produksi kami telah memenuhi standar halal yang ketat. Ini memberikan jaminan kepada konsumen Muslim bahwa produk kemasan kami aman dan sesuai syariat Islam.</p>
+          <ul class="benefit-list">
+            <li>Sumber bahan baku halal</li>
+            <li>Area produksi terpisah</li>
+            <li>Keterlacakan dan dokumentasi</li>
+            <li>Pelatihan staf kepatuhan halal</li>
+            <li>Audit dan pemantauan rutin</li>
+            <li>Verifikasi pihak ketiga</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Accordion 3: BPOM -->
+      <div class="mb-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="acc-header" onclick="toggleAccordion(this)">
+          <span>
+            <i class="bi bi-heart-pulse me-2" style="color:var(--danger);"></i>
+            <strong>Keamanan Pangan &amp; Kepatuhan BPOM</strong>
+          </span>
+          <i class="bi bi-chevron-down acc-icon"></i>
+        </div>
+        <div class="acc-content">
+          <p style="margin-bottom:16px;">Kepatuhan terhadap regulasi Badan Pengawas Obat dan Makanan (BPOM) adalah prioritas utama kami. Semua material yang bersentuhan langsung dengan produk makanan dan minuman telah melalui seleksi ketat untuk memastikan keamanan konsumen.</p>
+          <ul class="benefit-list">
+            <li>Pemilihan material food grade</li>
+            <li>Pencegahan kontaminasi</li>
+            <li>Pengujian kualitas berkala</li>
+            <li>Protokol kebersihan dan sanitasi</li>
+            <li>Pengendalian suhu dan penyimpanan</li>
+            <li>Prosedur penarikan produk</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Accordion 4: Kaizen -->
+      <div class="mb-3" data-aos="fade-up" data-aos-delay="150">
+        <div class="acc-header" onclick="toggleAccordion(this)">
+          <span>
+            <i class="bi bi-arrow-up-circle me-2" style="color:var(--primary);"></i>
+            <strong>Kaizen / Perbaikan Berkelanjutan</strong>
+          </span>
+          <i class="bi bi-chevron-down acc-icon"></i>
+        </div>
+        <div class="acc-content">
+          <p style="margin-bottom:16px;">Filosofi Kaizen mendorong setiap anggota tim kami untuk secara proaktif mencari peluang perbaikan. Dengan pendekatan lean manufacturing dan pemberdayaan karyawan, kami terus meningkatkan efisiensi, mengurangi pemborosan, dan menghasilkan produk yang lebih baik.</p>
+          <ul class="benefit-list">
+            <li>Pemberdayaan karyawan</li>
+            <li>Optimasi proses produksi</li>
+            <li>Pengurangan pemborosan (Muda)</li>
+            <li>Quality circle dan rapat rutin</li>
+            <li>Prinsip lean manufacturing</li>
+            <li>Pemantauan metrik kinerja</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 3: SERTIFIKASI KAMI ========== -->
+<section class="section" style="background:linear-gradient(135deg,#f0fae8,#e6f5d8);">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Sertifikasi Kami / Our Certifications</h2>
+      <p>Bukti nyata komitmen kami terhadap standar kualitas internasional dan keunggulan berkelanjutan</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in">
+        <a href="assets/img/images/sertifikat1.jpg" class="glightbox" data-gallery="sertifikat">
+          <img src="assets/img/images/sertifikat1.jpg" alt="Sertifikat 1"
+               style="width:100%;border-radius:10px;box-shadow:var(--shadow-md);transition:transform .3s;"
+               onmouseover="this.style.transform='scale(1.03)'"
+               onmouseout="this.style.transform='scale(1)'">
+        </a>
+        <p class="text-center mt-2 fw-semibold" style="font-size:13px;color:var(--gray);">Sertifikat ISO 9001:2015</p>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="150">
+        <a href="assets/img/images/sertifikat2.jpg" class="glightbox" data-gallery="sertifikat">
+          <img src="assets/img/images/sertifikat2.jpg" alt="Sertifikat 2"
+               style="width:100%;border-radius:10px;box-shadow:var(--shadow-md);transition:transform .3s;"
+               onmouseover="this.style.transform='scale(1.03)'"
+               onmouseout="this.style.transform='scale(1)'">
+        </a>
+        <p class="text-center mt-2 fw-semibold" style="font-size:13px;color:var(--gray);">Sertifikat Halal MUI</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="cta-section">
+  <div class="container" data-aos="zoom-in">
+    <h2 class="mb-3" style="color:#fff;">Keunggulan Kualitas Bersertifikat / Certified Quality Excellence</h2>
+    <p class="mb-4" style="font-size:18px;color:rgba(255,255,255,0.9);">Percayakan kebutuhan kemasan Anda kepada mitra yang telah terbukti memenuhi standar kualitas tertinggi di industri. Kami berkomitmen pada kesuksesan Anda. Trust us as your partner in packaging excellence and quality assurance.</p>
+    <a href="contact.html" class="btn btn-white btn-lg">Minta Info Sertifikasi / Request Certification Info</a>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <img src="assets/img/images/logo.png" alt="Logo Oro Plastindo" style="height:36px;margin-bottom:16px;filter:brightness(0) invert(1);">
+      <p>Produsen kemasan plastik terkemuka yang melayani industri minuman Indonesia dengan solusi inovatif dan berkelanjutan.</p>
+      <div class="d-flex gap-3 mt-3">
+        <a href="#" style="color:rgba(255,255,255,0.7);font-size:20px;"><i class="bi bi-facebook"></i></a>
+        <a href="#" style="color:rgba(255,255,255,0.7);font-size:20px;"><i class="bi bi-instagram"></i></a>
+        <a href="#" style="color:rgba(255,255,255,0.7);font-size:20px;"><i class="bi bi-linkedin"></i></a>
+        <a href="#" style="color:rgba(255,255,255,0.7);font-size:20px;"><i class="bi bi-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>Tautan Cepat</h4>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang Kami</a></li>
+        <li><a href="products.html">Produk</a></li>
+        <li><a href="management-system.html">Sistem Manajemen</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Produk Kami</h4>
+      <ul>
+        <li><a href="products.html">Preform</a></li>
+        <li><a href="products.html">Tutup Botol (Closure)</a></li>
+        <li><a href="products.html">Galon</a></li>
+        <li><a href="products.html">Tutup Galon</a></li>
+        <li><a href="products.html">Botol PET</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Informasi Kontak</h4>
+      <p><i class="bi bi-geo-alt-fill me-2" style="color:var(--primary);"></i>Jl. Raya Cidahu – Parung Kuda, Sukabumi</p>
+      <p><i class="bi bi-telephone-fill me-2" style="color:var(--primary);"></i>+62 123 456 789</p>
+      <p><i class="bi bi-envelope-fill me-2" style="color:var(--primary);"></i>info@oroplastindo.com</p>
+      <p><i class="bi bi-clock-fill me-2" style="color:var(--primary);"></i>Senin – Jumat, 08.00 – 17.00 WIB</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 PT Oro Plastindo. All Rights Reserved. &nbsp;|&nbsp;
+       <a href="#">Kebijakan Privasi / Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Syarat &amp; Ketentuan / Terms &amp; Conditions</a></p>
+  </div>
+</footer>
+
+<button class="scroll-to-top"><i class="bi bi-chevron-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox@3/dist/glightbox.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  AOS.init({ duration: 900, once: true, offset: 80 });
+  GLightbox();
+
+  // System cards toggle
+  document.querySelectorAll('.sys-card').forEach((card) => {
+    card.addEventListener('click', function () {
+      document.querySelectorAll('.sys-card').forEach(c => {
+        c.classList.remove('active');
+        c.querySelector('.sys-body').classList.remove('active');
+      });
+      this.classList.add('active');
+      this.querySelector('.sys-body').classList.add('active');
+    });
+  });
+
+  // Accordion
+  function toggleAccordion(header) {
+    const content = header.nextElementSibling;
+    const icon = header.querySelector('.acc-icon');
+    const isOpen = content.classList.contains('open');
+    document.querySelectorAll('.acc-content').forEach(c => c.classList.remove('open'));
+    document.querySelectorAll('.acc-icon').forEach(i => i.style.transform = '');
+    if (!isOpen) {
+      content.classList.add('open');
+      if (icon) icon.style.transform = 'rotate(180deg)';
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Klien Kami – PT Oro Plastindo</title>
+  <meta name="description" content="PT Oro Plastindo dipercaya oleh merek-merek AMDK terkemuka di Indonesia seperti AQUA, ADES, CLEO, dan puluhan klien lainnya.">
+  <meta name="keywords" content="klien oro plastindo, AMDK, mitra bisnis, kemasan plastik Indonesia">
+  <meta name="author" content="PT Oro Plastindo">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <style>
+    /* ---- PAGE HERO ---- */
+    .page-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      padding: 90px 0 70px;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -40%; right: -8%;
+      width: 500px; height: 500px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+    .page-hero .container { position: relative; z-index: 1; }
+    .page-hero h1 { color: #fff; font-size: 48px; margin-bottom: 16px; }
+    .page-hero .lead { color: rgba(255,255,255,0.88); font-size: 18px; margin-bottom: 24px; }
+    .breadcrumb-item a { color: rgba(255,255,255,0.75); text-decoration: none; }
+    .breadcrumb-item.active { color: rgba(255,255,255,0.95); }
+    .breadcrumb-item + .breadcrumb-item::before { color: rgba(255,255,255,0.6); }
+
+    /* ---- TRUST INDICATORS ---- */
+    .trust-box {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: var(--shadow-sm);
+      padding: 40px 20px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .trust-box:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .trust-num { font-size: 52px; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 8px; }
+    .trust-label { font-size: 14px; color: var(--gray); font-weight: 600; }
+
+    /* ---- CLIENT LOGO BOX ---- */
+    .client-logo-box {
+      width: 150px; height: 80px;
+      background: #fff; border: 1px solid var(--border); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-primary); font-weight: 700; font-size: 15px; color: #aaa;
+      filter: grayscale(1); transition: all 0.3s;
+      box-shadow: var(--shadow-sm);
+    }
+    .client-logo-box:hover { filter: grayscale(0); color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+    /* ---- BENEFIT ITEMS ---- */
+    .benefit-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+    .benefit-item i { font-size: 20px; margin-top: 2px; flex-shrink: 0; }
+    .benefit-item h6 { font-size: 16px; font-weight: 700; margin-bottom: 4px; color: var(--dark); }
+    .benefit-item p { font-size: 13px; color: var(--gray); margin: 0; }
+
+    /* ---- PARTNERSHIP BOX ---- */
+    .partnership-box {
+      background: linear-gradient(135deg, #f0fae8, #e6f5d8);
+      border-radius: 16px;
+      padding: 50px;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .partner-point { display: flex; align-items: center; gap: 10px; text-align: left; margin-bottom: 12px; font-size: 14px; color: var(--dark-gray); }
+    .partner-point i { color: var(--secondary); font-size: 18px; flex-shrink: 0; }
+
+    /* ---- CTA ---- */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff; padding: 90px 0; text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; top: -40%; right: -8%;
+      width: 500px; height: 500px;
+      background: rgba(245,166,35,0.12); border-radius: 50%;
+    }
+    .cta-section .container { position: relative; z-index: 1; }
+    .btn-white { background: #fff; color: var(--primary); border: 2px solid #fff; font-weight: 700; }
+    .btn-white:hover { background: var(--primary-light); color: #fff; border-color: var(--primary-light); }
+    .btn-outline-white { background: transparent; color: #fff; border: 2px solid #fff; font-weight: 700; }
+    .btn-outline-white:hover { background: #fff; color: var(--primary); }
+
+    @media (max-width: 768px) {
+      .page-hero h1 { font-size: 32px; }
+      .partnership-box { padding: 30px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="index.html" class="navbar-brand">
+      <img src="assets/img/images/logo.png" alt="Logo Oro Plastindo">
+    </a>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="index.html"             class="nav-link">Beranda</a></li>
+      <li class="nav-item"><a href="about.html"             class="nav-link">Tentang Kami</a></li>
+      <li class="nav-item"><a href="products.html"          class="nav-link">Produk</a></li>
+      <li class="nav-item"><a href="management-system.html" class="nav-link">Manajemen</a></li>
+      <li class="nav-item"><a href="clients.html"           class="nav-link active">Klien</a></li>
+      <li class="nav-item"><a href="news.html"              class="nav-link">Berita</a></li>
+      <li class="nav-item"><a href="career.html"            class="nav-link">Karir</a></li>
+      <li class="nav-item"><a href="contact.html"           class="nav-link">Kontak</a></li>
+    </ul>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ========== PAGE HERO ========== -->
+<section class="page-hero">
+  <div class="container" data-aos="fade-up">
+    <h1>Klien Kami / Our Clients</h1>
+    <p class="lead">Dipercaya oleh merek-merek AMDK terkemuka di Indonesia dan Asia Tenggara</p>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="index.html">Beranda / Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Klien / Clients</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- ========== SECTION 1: TRUST INDICATORS ========== -->
+<section class="section">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-6 col-lg-3" data-aos="fade-up">
+        <div class="trust-box">
+          <div class="trust-num">50+</div>
+          <div class="trust-label">Klien Aktif / Active Clients</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="trust-box">
+          <div class="trust-num">15+</div>
+          <div class="trust-label">Tahun Pengalaman / Years of Excellence</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="trust-box">
+          <div class="trust-num">100%</div>
+          <div class="trust-label">Kualitas Terjamin / Quality Guaranteed</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="trust-box">
+          <div class="trust-num">99%</div>
+          <div class="trust-label">Ketepatan Pengiriman / Delivery Accuracy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 2: MITRA TERPERCAYA ========== -->
+<section class="section" style="background:linear-gradient(135deg,#f0fae8,#e6f5d8);">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Mitra Terpercaya Kami / Our Trusted Partners</h2>
+      <p>Kami bangga melayani merek-merek AMDK terkemuka di seluruh Indonesia dan kawasan regional</p>
+    </div>
+    <div class="d-flex flex-wrap justify-content-center gap-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="client-logo-box">AQUA</div>
+      <div class="client-logo-box">ADES</div>
+      <div class="client-logo-box">PRIM-A</div>
+      <div class="client-logo-box">VIT</div>
+      <div class="client-logo-box">CLEO</div>
+      <div class="client-logo-box">PARACELS</div>
+      <div class="client-logo-box">REFRESHA</div>
+      <div class="client-logo-box">TRISULA</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 3: MENGAPA MEMILIH ORO PLASTINDO ========== -->
+<section class="section">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Mengapa Memilih Oro Plastindo? / Why Choose Us?</h2>
+      <p>Kami bukan sekadar pemasok – kami adalah mitra strategis untuk pertumbuhan bisnis berkelanjutan Anda</p>
+    </div>
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="benefit-item">
+          <i class="bi bi-check-circle-fill" style="color:var(--primary);"></i>
+          <div>
+            <h6>Kualitas Tersertifikasi / Certified Quality</h6>
+            <p>ISO 9001:2015 dan Halal MUI menjamin standar kualitas tertinggi di setiap produk yang kami hasilkan.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <i class="bi bi-check-circle-fill" style="color:var(--primary);"></i>
+          <div>
+            <h6>Pengiriman Tepat Waktu / On-Time Delivery</h6>
+            <p>Tingkat ketepatan pengiriman 99% memastikan rantai pasokan Anda tidak terganggu sepanjang waktu.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <i class="bi bi-check-circle-fill" style="color:var(--primary);"></i>
+          <div>
+            <h6>Solusi Kustomisasi / Custom Solutions</h6>
+            <p>Produk sesuai kebutuhan spesifik Anda – ukuran, warna, dan spesifikasi teknis yang fleksibel.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <i class="bi bi-check-circle-fill" style="color:var(--primary);"></i>
+          <div>
+            <h6>Dukungan Teknis / Technical Support</h6>
+            <p>Tim profesional siap membantu dari konsultasi awal hingga after-sales support berkelanjutan.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <i class="bi bi-check-circle-fill" style="color:var(--primary);"></i>
+          <div>
+            <h6>Harga Kompetitif / Competitive Pricing</h6>
+            <p>Nilai terbaik tanpa mengorbankan kualitas – solusi efisien untuk pertumbuhan bisnis Anda.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <i class="bi bi-check-circle-fill" style="color:var(--primary);"></i>
+          <div>
+            <h6>Praktik Berkelanjutan / Sustainable Practices</h6>
+            <p>Produksi ramah lingkungan yang mendukung komitmen keberlanjutan dan tanggung jawab sosial Anda.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <img src="assets/img/images/about2.jpg" alt="Kemitraan"
+             style="width:100%;border-radius:12px;box-shadow:var(--shadow-lg);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 4: PARTNERSHIP BOX ========== -->
+<section class="section" style="background:linear-gradient(135deg,#f0fae8,#e6f5d8);">
+  <div class="container">
+    <div class="partnership-box" data-aos="zoom-in">
+      <h2 class="mb-3">Siap Menjadi Mitra Kami? / Ready to Partner with Us?</h2>
+      <p class="mb-4" style="color:var(--gray);">Bergabunglah dengan lebih dari 50 merek AMDK yang telah mempercayakan kebutuhan kemasan mereka kepada PT Oro Plastindo. Kami siap mendukung pertumbuhan bisnis Anda menuju kesuksesan bersama. Join our growing network of successful partners across Indonesia.</p>
+      <div class="row g-2 mb-4">
+        <div class="col-12 col-sm-6">
+          <div class="partner-point"><i class="bi bi-star-fill"></i> Konsultasi gratis tanpa biaya / Free Consultation</div>
+          <div class="partner-point"><i class="bi bi-star-fill"></i> Proses onboarding cepat / Quick Onboarding</div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="partner-point"><i class="bi bi-star-fill"></i> Sampel produk tersedia / Product Samples Available</div>
+          <div class="partner-point"><i class="bi bi-star-fill"></i> Kontrak fleksibel / Flexible Terms</div>
+        </div>
+      </div>
+      <a href="contact.html" class="btn btn-primary btn-lg">Diskusikan Kemitraan / Discuss Partnership</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="cta-section">
+  <div class="container" data-aos="zoom-in">
+    <h2 class="mb-3" style="color:#fff;">Jadilah Bagian dari Kesuksesan Kami / Join Our Success Story</h2>
+    <p class="mb-4" style="font-size:18px;color:rgba(255,255,255,0.9);">Bersama lebih dari 50 mitra terpercaya, PT Oro Plastindo siap menghadirkan solusi kemasan terbaik untuk bisnis Anda. Together, we achieve packaging excellence and business growth.</p>
+    <a href="contact.html" class="btn btn-white btn-lg me-3">Minta Penawaran / Request Quotation</a>
+    <a href="products.html" class="btn btn-outline-white btn-lg">Jelajahi Produk / Explore Products</a>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <img src="assets/img/images/logo.png" alt="Logo Oro Plastindo" style="height:36px;margin-bottom:16px;filter:brightness(0) invert(1);">
+      <p>Produsen kemasan plastik terkemuka yang melayani industri minuman Indonesia dengan solusi inovatif dan berkelanjutan.</p>
+      <div class="d-flex gap-3 mt-3">
+        <a href="#" style="color:rgba(255,255,255,0.7);font-size:20px;"><i class="bi bi-facebook"></i></a>
+        <a href="#" style="color:rgba(255,255,255,0.7);font-size:20px;"><i class="bi bi-instagram"></i></a>
+        <a href="#" style="color:rgba(255,255,255,0.7);font-size:20px;"><i class="bi bi-linkedin"></i></a>
+        <a href="#" style="color:rgba(255,255,255,0.7);font-size:20px;"><i class="bi bi-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>Tautan Cepat</h4>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang Kami</a></li>
+        <li><a href="products.html">Produk</a></li>
+        <li><a href="management-system.html">Sistem Manajemen</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Produk Kami</h4>
+      <ul>
+        <li><a href="products.html">Preform</a></li>
+        <li><a href="products.html">Tutup Botol (Closure)</a></li>
+        <li><a href="products.html">Galon</a></li>
+        <li><a href="products.html">Tutup Galon</a></li>
+        <li><a href="products.html">Botol PET</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Informasi Kontak</h4>
+      <p><i class="bi bi-geo-alt-fill me-2" style="color:var(--primary);"></i>Jl. Raya Cidahu – Parung Kuda, Sukabumi</p>
+      <p><i class="bi bi-telephone-fill me-2" style="color:var(--primary);"></i>+62 123 456 789</p>
+      <p><i class="bi bi-envelope-fill me-2" style="color:var(--primary);"></i>info@oroplastindo.com</p>
+      <p><i class="bi bi-clock-fill me-2" style="color:var(--primary);"></i>Senin – Jumat, 08.00 – 17.00 WIB</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 PT Oro Plastindo. All Rights Reserved. &nbsp;|&nbsp;
+       <a href="#">Kebijakan Privasi / Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Syarat &amp; Ketentuan / Terms &amp; Conditions</a></p>
+  </div>
+</footer>
+
+<button class="scroll-to-top"><i class="bi bi-chevron-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  AOS.init({ duration: 900, once: true, offset: 80 });
+</script>
+</body>
+</html>

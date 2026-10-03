@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Berita &amp; Pembaruan – PT Oro Plastindo</title>
+  <meta name="description" content="Ikuti informasi terkini dan kabar terbaru dari PT Oro Plastindo – peluncuran produk, pencapaian, dan program CSR.">
+  <meta name="keywords" content="berita oro plastindo, update, kabar terbaru, kemasan plastik">
+  <meta name="author" content="PT Oro Plastindo">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <style>
+    /* ---- PAGE HERO ---- */
+    .page-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      padding: 90px 0 70px;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -40%; right: -8%;
+      width: 500px; height: 500px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+    .page-hero .container { position: relative; z-index: 1; }
+    .page-hero h1 { color: #fff; font-size: 48px; margin-bottom: 16px; }
+    .page-hero .lead { color: rgba(255,255,255,0.88); font-size: 18px; margin-bottom: 24px; }
+    .breadcrumb-item a { color: rgba(255,255,255,0.75); text-decoration: none; }
+    .breadcrumb-item.active { color: rgba(255,255,255,0.95); }
+    .breadcrumb-item + .breadcrumb-item::before { color: rgba(255,255,255,0.6); }
+
+    /* ---- NEWS CARD ---- */
+    .news-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: all 0.3s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .news-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    .news-card-icon {
+      height: 180px;
+      background: linear-gradient(135deg, #f0fae8, #e6f5d8);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .news-card-icon i { font-size: 64px; color: var(--primary); }
+    .news-card-body {
+      padding: 24px;
+      display: flex; flex-direction: column; flex: 1;
+    }
+    .news-meta { font-size: 12px; color: var(--light-gray); margin-bottom: 10px; }
+    .news-meta span { margin-right: 8px; }
+    .news-card-body h4 { font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: 10px; line-height: 1.4; }
+    .news-card-body p { font-size: 13px; color: var(--gray); line-height: 1.7; flex: 1; }
+    .news-card-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 16px; margin-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 13px; color: var(--light-gray);
+    }
+    .news-card-footer a { color: var(--primary); font-weight: 600; text-decoration: none; }
+    .news-card-footer a:hover { color: var(--primary-dark); }
+
+    /* ---- PAGINATION ---- */
+    .pagination .page-link {
+      color: var(--primary);
+      border-color: var(--border);
+    }
+    .pagination .page-item.active .page-link {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+    .pagination .page-link:hover {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    /* ---- NEWSLETTER ---- */
+    .newsletter-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      padding: 80px 0; text-align: center; color: #fff;
+      position: relative; overflow: hidden;
+    }
+    .newsletter-section::before {
+      content: ''; position: absolute; top: -40%; right: -8%;
+      width: 500px; height: 500px;
+      background: rgba(245,166,35,0.12); border-radius: 50%;
+    }
+    .newsletter-section .container { position: relative; z-index: 1; }
+    .newsletter-input-group { max-width: 500px; margin: 0 auto; }
+
+    @media (max-width: 768px) {
+      .page-hero h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="index.html" class="navbar-brand">
+      <img src="assets/img/images/logo.png" alt="Logo Oro Plastindo">
+    </a>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="index.html"             class="nav-link">Beranda</a></li>
+      <li class="nav-item"><a href="about.html"             class="nav-link">Tentang Kami</a></li>
+      <li class="nav-item"><a href="products.html"          class="nav-link">Produk</a></li>
+      <li class="nav-item"><a href="management-system.html" class="nav-link">Manajemen</a></li>
+      <li class="nav-item"><a href="clients.html"           class="nav-link">Klien</a></li>
+      <li class="nav-item"><a href="news.html"              class="nav-link active">Berita</a></li>
+      <li class="nav-item"><a href="career.html"            class="nav-link">Karir</a></li>
+      <li class="nav-item"><a href="contact.html"           class="nav-link">Kontak</a></li>
+    </ul>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ========== PAGE HERO ========== -->
+<section class="page-hero">
+  <div class="container" data-aos="fade-up">
+    <h1>Berita &amp; Blog / News &amp; Blog</h1>
+    <p class="lead">Informasi terkini dan kabar terbaru dari PT Oro Plastindo / Latest updates and news from PT Oro Plastindo</p>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Berita &amp; Blog / News &amp; Blog</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- ========== ARTIKEL ========== -->
+<section class="section">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Artikel Terkini / Latest Articles</h2>
+      <p>Tetap terinformasi dengan perkembangan terbaru dari PT Oro Plastindo / Stay updated with the latest developments from PT Oro Plastindo</p>
+    </div>
+    <div class="row g-4">
+
+      <!-- Artikel 1 -->
+      <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="news-card">
+          <div class="news-card-icon">
+            <i class="bi bi-newspaper"></i>
+          </div>
+          <div class="news-card-body">
+            <div class="news-meta">
+              <span><i class="bi bi-calendar3 me-1"></i>1 Oktober 2024</span>
+              <span class="badge bg-primary" style="font-size:11px;">Berita</span>
+            </div>
+            <h4>Peluncuran Lini Produksi Baru / New Production Line Launch</h4>
+            <p>Oro Plastindo mengumumkan peluncuran lini produksi terbaru yang meningkatkan kapasitas hingga 40%. / Oro Plastindo announces the launch of its latest production line, increasing capacity by up to 40%.</p>
+            <div class="news-card-footer">
+              <span><i class="bi bi-person me-1"></i>Admin</span>
+              <a href="#">Baca Selengkapnya / Read More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artikel 2 -->
+      <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="news-card">
+          <div class="news-card-icon">
+            <i class="bi bi-trophy"></i>
+          </div>
+          <div class="news-card-body">
+            <div class="news-meta">
+              <span><i class="bi bi-calendar3 me-1"></i>25 September 2024</span>
+              <span class="badge bg-secondary" style="font-size:11px;">Pencapaian</span>
+            </div>
+            <h4>Resertifikasi ISO 9001:2015 Berhasil Diraih / ISO 9001:2015 Recertification Achieved</h4>
+            <p>Berhasil memperbarui sertifikasi ISO 9001:2015 sebagai bukti komitmen terhadap manajemen mutu. / Successfully renewed ISO 9001:2015 certification demonstrating our commitment to quality management.</p>
+            <div class="news-card-footer">
+              <span><i class="bi bi-person me-1"></i>Admin</span>
+              <a href="#">Baca Selengkapnya / Read More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artikel 3 -->
+      <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="news-card">
+          <div class="news-card-icon">
+            <i class="bi bi-heart"></i>
+          </div>
+          <div class="news-card-body">
+            <div class="news-meta">
+              <span><i class="bi bi-calendar3 me-1"></i>15 September 2024</span>
+              <span class="badge bg-success" style="font-size:11px;">CSR</span>
+            </div>
+            <h4>Program Bakti Sosial Komunitas / Community Service Program</h4>
+            <p>Tim Oro Plastindo berpartisipasi dalam program pengembangan masyarakat dan pelestarian lingkungan. / Oro Plastindo's team participates in community development and environmental conservation programs.</p>
+            <div class="news-card-footer">
+              <span><i class="bi bi-person me-1"></i>Admin</span>
+              <a href="#">Baca Selengkapnya / Read More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artikel 4 -->
+      <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="news-card">
+          <div class="news-card-icon">
+            <i class="bi bi-people"></i>
+          </div>
+          <div class="news-card-body">
+            <div class="news-meta">
+              <span><i class="bi bi-calendar3 me-1"></i>8 September 2024</span>
+              <span class="badge bg-warning text-dark" style="font-size:11px;">Training</span>
+            </div>
+            <h4>Program Pengembangan Karyawan / Employee Development Program</h4>
+            <p>Meluncurkan program pelatihan komprehensif mencakup keterampilan teknis dan pengembangan profesional. / Launching comprehensive training program covering technical skills and professional development.</p>
+            <div class="news-card-footer">
+              <span><i class="bi bi-person me-1"></i>Admin</span>
+              <a href="#">Baca Selengkapnya / Read More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artikel 5 -->
+      <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="news-card">
+          <div class="news-card-icon">
+            <i class="bi bi-lightning"></i>
+          </div>
+          <div class="news-card-body">
+            <div class="news-meta">
+              <span><i class="bi bi-calendar3 me-1"></i>30 Agustus 2024</span>
+              <span class="badge bg-info text-dark" style="font-size:11px;">Inovasi</span>
+            </div>
+            <h4>Inovasi Kemasan Ramah Lingkungan / Eco-Friendly Packaging Innovation</h4>
+            <p>Memperkenalkan opsi kemasan eco-friendly dengan pengurangan plastik dan kualitas terjaga. / Introducing eco-friendly packaging options with reduced plastic usage while maintaining quality.</p>
+            <div class="news-card-footer">
+              <span><i class="bi bi-person me-1"></i>Admin</span>
+              <a href="#">Baca Selengkapnya / Read More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artikel 6 -->
+      <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="news-card">
+          <div class="news-card-icon">
+            <i class="bi bi-graph-up"></i>
+          </div>
+          <div class="news-card-body">
+            <div class="news-meta">
+              <span><i class="bi bi-calendar3 me-1"></i>20 Agustus 2024</span>
+              <span class="badge bg-primary" style="font-size:11px;">Pertumbuhan</span>
+            </div>
+            <h4>Pencapaian Pendapatan Tertinggi / Record Revenue Achievement</h4>
+            <p>Oro Plastindo mengumumkan pertumbuhan pendapatan tertinggi mencerminkan ekspansi bisnis yang sukses. / Oro Plastindo announces record revenue growth reflecting successful business expansion.</p>
+            <div class="news-card-footer">
+              <span><i class="bi bi-person me-1"></i>Admin</span>
+              <a href="#">Baca Selengkapnya / Read More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pagination -->
+    <div class="d-flex justify-content-center mt-5" data-aos="fade-up">
+      <nav aria-label="Navigasi halaman">
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" aria-label="Sebelumnya">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Berikutnya">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- ========== NEWSLETTER CTA ========== -->
+<section class="newsletter-section">
+  <div class="container" data-aos="zoom-in">
+    <h2 class="mb-3" style="color:#fff;">Tetap Terhubung / Stay Connected</h2>
+    <p class="mb-4" style="color:rgba(255,255,255,0.9);font-size:17px;">Daftarkan email Anda untuk mendapatkan berita terbaru dari PT Oro Plastindo. / Register your email to receive the latest updates from PT Oro Plastindo.</p>
+    <div class="newsletter-input-group">
+      <div class="input-group">
+        <input type="email" class="form-control form-control-lg" placeholder="Masukkan alamat email Anda / Enter your email address" aria-label="Alamat email">
+        <button class="btn btn-lg" style="background:#fff;color:var(--primary);font-weight:700;white-space:nowrap;">Berlangganan / Subscribe</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <img src="assets/img/images/logo.png" alt="Logo Oro Plastindo" style="height:36px;margin-bottom:16px;filter:brightness(0) invert(1);">
+      <p>Produsen kemasan plastik terkemuka yang melayani industri minuman Indonesia dengan solusi inovatif dan berkelanjutan.</p>
+      <div class="d-flex gap-3 mt-3">
+        <a href="#" style="color:rgba(255,255,255,0.7);font-size:20px;"><i class="bi bi-facebook"></i></a>
+        <a href="#" style="color:rgba(255,255,255,0.7);font-size:20px;"><i class="bi bi-instagram"></i></a>
+        <a href="#" style="color:rgba(255,255,255,0.7);font-size:20px;"><i class="bi bi-linkedin"></i></a>
+        <a href="#" style="color:rgba(255,255,255,0.7);font-size:20px;"><i class="bi bi-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>Tautan Cepat</h4>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang Kami</a></li>
+        <li><a href="products.html">Produk</a></li>
+        <li><a href="management-system.html">Sistem Manajemen</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Produk Kami</h4>
+      <ul>
+        <li><a href="products.html">Preform</a></li>
+        <li><a href="products.html">Tutup Botol (Closure)</a></li>
+        <li><a href="products.html">Galon</a></li>
+        <li><a href="products.html">Tutup Galon</a></li>
+        <li><a href="products.html">Botol PET</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Informasi Kontak</h4>
+      <p><i class="bi bi-geo-alt-fill me-2" style="color:var(--primary);"></i>Jl. Raya Cidahu – Parung Kuda, Sukabumi</p>
+      <p><i class="bi bi-telephone-fill me-2" style="color:var(--primary);"></i>+62 123 456 789</p>
+      <p><i class="bi bi-envelope-fill me-2" style="color:var(--primary);"></i>info@oroplastindo.com</p>
+      <p><i class="bi bi-clock-fill me-2" style="color:var(--primary);"></i>Senin – Jumat, 08.00 – 17.00 WIB</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 PT Oro Plastindo. All Rights Reserved. &nbsp;|&nbsp;
+       <a href="#">Kebijakan Privasi / Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Syarat &amp; Ketentuan / Terms &amp; Conditions</a></p>
+  </div>
+</footer>
+
+<button class="scroll-to-top"><i class="bi bi-chevron-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  AOS.init({ duration: 900, once: true, offset: 80 });
+</script>
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Karir – PT Oro Plastindo</title>
+  <meta name="description" content="Bergabunglah dengan tim PT Oro Plastindo. Temukan peluang karir di perusahaan kemasan plastik terkemuka di Indonesia.">
+  <meta name="keywords" content="karir oro plastindo, lowongan kerja, sukabumi, kemasan plastik">
+  <meta name="author" content="PT Oro Plastindo">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <style>
+    /* ---- PAGE HERO ---- */
+    .page-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      padding: 90px 0 70px;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -40%; right: -8%;
+      width: 500px; height: 500px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+    .page-hero .container { position: relative; z-index: 1; }
+    .page-hero h1 { color: #fff; font-size: 48px; margin-bottom: 16px; }
+    .page-hero .lead { color: rgba(255,255,255,0.88); font-size: 18px; margin-bottom: 24px; }
+    .breadcrumb-item a { color: rgba(255,255,255,0.75); text-decoration: none; }
+    .breadcrumb-item.active { color: rgba(255,255,255,0.95); }
+    .breadcrumb-item + .breadcrumb-item::before { color: rgba(255,255,255,0.6); }
+
+    /* ---- BENEFIT CARD ---- */
+    .benefit-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 36px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s;
+      height: 100%;
+    }
+    .benefit-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .benefit-card-icon {
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg, #f0fae8, #e6f5d8);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .benefit-card-icon i { font-size: 32px; color: var(--primary); }
+    .benefit-card h5 { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 10px; }
+    .benefit-card p { font-size: 13px; color: var(--gray); margin: 0; line-height: 1.7; }
+
+    /* ---- JOB CARD ---- */
+    .job-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--primary);
+      transition: all 0.3s;
+    }
+    .job-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .job-card h3 { font-size: 22px; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
+    .job-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; font-size: 13px; color: var(--gray); }
+    .job-meta span { display: flex; align-items: center; gap: 6px; }
+    .job-meta i { color: var(--primary); }
+    .job-card p { font-size: 14px; color: var(--gray); line-height: 1.8; margin-bottom: 20px; }
+    .job-card h5 { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
+    .req-list { list-style: none; padding: 0; margin: 0; }
+    .req-list li { padding: 5px 0 5px 22px; position: relative; font-size: 13px; color: var(--dark-gray); }
+    .req-list li::before { content: '•'; position: absolute; left: 0; color: var(--primary); font-weight: 700; font-size: 16px; line-height: 1.3; }
+
+    /* ---- CTA ---- */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff; padding: 90px 0; text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; top: -40%; right: -8%;
+      width: 500px; height: 500px;
+      background: rgba(245,166,35,0.12); border-radius: 50%;
+    }
+    .cta-section .container { position: relative; z-index: 1; }
+    .btn-white { background: #fff; color: var(--primary); border: 2px solid #fff; font-weight: 700; }
+    .btn-white:hover { background: var(--primary-light); color: #fff; border-color: var(--primary-light); }
+
+    @media (max-width: 768px) {
+      .page-hero h1 { font-size: 32px; }
+      .job-meta { gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="index.html" class="navbar-brand">
+      <img src="assets/img/images/logo.png" alt="Logo Oro Plastindo">
+    </a>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="index.html"             class="nav-link">Beranda</a></li>
+      <li class="nav-item"><a href="about.html"             class="nav-link">Tentang Kami</a></li>
+      <li class="nav-item"><a href="products.html"          class="nav-link">Produk</a></li>
+      <li class="nav-item"><a href="management-system.html" class="nav-link">Manajemen</a></li>
+      <li class="nav-item"><a href="clients.html"           class="nav-link">Klien</a></li>
+      <li class="nav-item"><a href="news.html"              class="nav-link">Berita</a></li>
+      <li class="nav-item"><a href="career.html"            class="nav-link active">Karir</a></li>
+      <li class="nav-item"><a href="contact.html"           class="nav-link">Kontak</a></li>
+    </ul>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ========== PAGE HERO ========== -->
+<section class="page-hero">
+  <div class="container" data-aos="fade-up">
+    <h1>Karir / Careers</h1>
+    <p class="lead">Bangun karir Anda bersama produsen kemasan plastik terkemuka di Indonesia / Build your career with Indonesia's leading plastic packaging manufacturer</p>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Karir / Careers</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- ========== SECTION 1: MENGAPA BERGABUNG ========== -->
+<section class="section" style="background:linear-gradient(135deg,#f0fae8,#e6f5d8);">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Mengapa Bergabung dengan Kami? / Why Join Us?</h2>
+      <p>Kami menawarkan lingkungan kerja yang mendukung pertumbuhan dan inovasi / We offer a work environment that supports growth and innovation</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up">
+        <div class="benefit-card">
+          <div class="benefit-card-icon"><i class="bi bi-briefcase"></i></div>
+          <h5>Pertumbuhan Profesional / Professional Growth</h5>
+          <p>Peluang pengembangan karir dan program pelatihan berkelanjutan untuk meningkatkan keahlian Anda. / Career development opportunities and continuous training programs to enhance your skills.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="benefit-card">
+          <div class="benefit-card-icon"><i class="bi bi-people"></i></div>
+          <h5>Budaya Kerja Positif / Positive Work Culture</h5>
+          <p>Bekerja dalam lingkungan kolaboratif di mana kontribusi Anda dihargai dan dirayakan bersama. / Work in a collaborative environment where your contributions are valued and celebrated.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="benefit-card">
+          <div class="benefit-card-icon"><i class="bi bi-gear"></i></div>
+          <h5>Fasilitas Modern / Modern Facilities</h5>
+          <p>Akses ke peralatan dan teknologi mutakhir yang mendukung pekerjaan yang efisien dan produktif. / Access to cutting-edge equipment and technology that support efficient and productive work.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="benefit-card">
+          <div class="benefit-card-icon"><i class="bi bi-cash-coin"></i></div>
+          <h5>Kompensasi Kompetitif / Competitive Compensation</h5>
+          <p>Paket gaji menarik dan benefit komprehensif termasuk asuransi kesehatan dan bonus kinerja. / Attractive salary packages and comprehensive benefits including health insurance and performance bonuses.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="benefit-card">
+          <div class="benefit-card-icon"><i class="bi bi-shield-check"></i></div>
+          <h5>Keselamatan Kerja / Workplace Safety</h5>
+          <p>Komitmen kuat terhadap keselamatan kerja dengan pelatihan lengkap dan langkah-langkah perlindungan. / Strong commitment to workplace safety with comprehensive training and protective measures.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="benefit-card">
+          <div class="benefit-card-icon"><i class="bi bi-star"></i></div>
+          <h5>Inovasi &amp; Keunggulan / Innovation &amp; Excellence</h5>
+          <p>Berkontribusi pada proyek-proyek inovatif dan menjadi bagian dari organisasi yang diakui atas kualitas. / Contribute to innovative projects and be part of an organization recognized for quality excellence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 2: POSISI TERSEDIA ========== -->
+<section class="section">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Posisi Tersedia</h2>
+      <p>Temukan peluang karir yang sesuai dengan keahlian dan passion Anda</p>
+    </div>
+    <div class="d-flex flex-column gap-4">
+
+      <!-- Job 1: Operator Produksi -->
+      <div class="job-card" data-aos="fade-up">
+        <h3>Operator Produksi / Production Operator</h3>
+        <div class="job-meta">
+          <span><i class="bi bi-geo-alt-fill"></i>Sukabumi</span>
+          <span><i class="bi bi-briefcase-fill"></i>Full-time</span>
+          <span><i class="bi bi-cash-coin"></i>Kompetitif / Competitive</span>
+        </div>
+        <p>Kami mencari Operator Produksi berpengalaman untuk mengoperasikan dan merawat peralatan produksi serta memastikan standar kualitas terpenuhi. / We are seeking an experienced Production Operator to operate and maintain production equipment while ensuring quality standards are met.</p>
+        <h5>Persyaratan / Requirements:</h5>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <ul class="req-list">
+              <li>Lulusan SMA/SMK sederajat</li>
+              <li>Pengalaman produksi min. 2 tahun</li>
+              <li>Memahami pengoperasian mesin</li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6">
+            <ul class="req-list">
+              <li>Teliti dan detail-oriented</li>
+              <li>Mampu bekerja dalam tim</li>
+              <li>Siap bekerja dalam shift</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-4">
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal">Lamar Sekarang / Apply Now</button>
+        </div>
+      </div>
+
+      <!-- Job 2: Quality Control Inspector -->
+      <div class="job-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>Quality Control Inspector / Inspektur Kontrol Kualitas</h3>
+        <div class="job-meta">
+          <span><i class="bi bi-geo-alt-fill"></i>Sukabumi</span>
+          <span><i class="bi bi-briefcase-fill"></i>Full-time</span>
+          <span><i class="bi bi-cash-coin"></i>Kompetitif / Competitive</span>
+        </div>
+        <p>Bergabunglah dengan tim Quality Control kami untuk memastikan semua produk memenuhi standar mutu tinggi kami. / Join our Quality Control team to ensure all products meet our high quality standards.</p>
+        <h5>Persyaratan / Requirements:</h5>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <ul class="req-list">
+              <li>D3/S1 Teknik atau Manajemen Mutu</li>
+              <li>Pengalaman QC min. 3 tahun</li>
+              <li>Memahami standar kualitas ISO</li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6">
+            <ul class="req-list">
+              <li>Analitis dan kritis</li>
+              <li>Kemampuan komunikasi baik</li>
+              <li>Menguasai komputer (MS Office)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-4">
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal">Lamar Sekarang / Apply Now</button>
+        </div>
+      </div>
+
+      <!-- Job 3: Staff Gudang -->
+      <div class="job-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Staff Gudang / Warehouse Staff</h3>
+        <div class="job-meta">
+          <span><i class="bi bi-geo-alt-fill"></i>Sukabumi</span>
+          <span><i class="bi bi-briefcase-fill"></i>Full-time</span>
+          <span><i class="bi bi-cash-coin"></i>Kompetitif / Competitive</span>
+        </div>
+        <p>Kami membutuhkan Staff Gudang yang terorganisir dan andal untuk mengelola inventaris, menangani pengiriman, dan memastikan penyimpanan produk yang tepat. / We need an organized and reliable Warehouse Staff to manage inventory, handle shipments, and ensure proper product storage.</p>
+        <h5>Persyaratan / Requirements:</h5>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <ul class="req-list">
+              <li>Lulusan SMA/SMK sederajat</li>
+              <li>Pengalaman pergudangan</li>
+              <li>Fisik yang prima</li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6">
+            <ul class="req-list">
+              <li>Kemampuan manajemen inventaris</li>
+              <li>Memiliki SIO Forklift (diutamakan)</li>
+              <li>Disiplin dan tepat waktu</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-4">
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal">Lamar Sekarang / Apply Now</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="cta-section">
+  <div class="container" data-aos="zoom-in">
+    <h2 class="mb-3" style="color:#fff;">Bergabunglah Bersama Kami / Join Our Team</h2>
+    <p class="mb-4" style="font-size:18px;color:rgba(255,255,255,0.9);">Kirimkan CV dan surat lamaran Anda kepada kami. Kami selalu terbuka untuk kandidat berbakat. / Send us your CV and cover letter. We are always open to talented candidates.</p>
+    <a href="contact.html" class="btn btn-white btn-lg">Hubungi Kami / Contact Us</a>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <img src="assets/img/images/logo.png" alt="Logo Oro Plastindo" style="height:36px;margin-bottom:16px;filter:brightness(0) invert(1);">
+      <p>Produsen kemasan plastik terkemuka yang melayani industri minuman Indonesia dengan solusi inovatif dan berkelanjutan.</p>
+      <div class="d-flex gap-3 mt-3">
+        <a href="#" style="color:rgba(255,255,255,0.7);font-size:20px;"><i class="bi bi-facebook"></i></a>
+        <a href="#" style="color:rgba(255,255,255,0.7);font-size:20px;"><i class="bi bi-instagram"></i></a>
+        <a href="#" style="color:rgba(255,255,255,0.7);font-size:20px;"><i class="bi bi-linkedin"></i></a>
+        <a href="#" style="color:rgba(255,255,255,0.7);font-size:20px;"><i class="bi bi-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>Tautan Cepat</h4>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang Kami</a></li>
+        <li><a href="products.html">Produk</a></li>
+        <li><a href="management-system.html">Sistem Manajemen</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Produk Kami</h4>
+      <ul>
+        <li><a href="products.html">Preform</a></li>
+        <li><a href="products.html">Tutup Botol (Closure)</a></li>
+        <li><a href="products.html">Galon</a></li>
+        <li><a href="products.html">Tutup Galon</a></li>
+        <li><a href="products.html">Botol PET</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Informasi Kontak</h4>
+      <p><i class="bi bi-geo-alt-fill me-2" style="color:var(--primary);"></i>Jl. Raya Cidahu – Parung Kuda, Sukabumi</p>
+      <p><i class="bi bi-telephone-fill me-2" style="color:var(--primary);"></i>+62 123 456 789</p>
+      <p><i class="bi bi-envelope-fill me-2" style="color:var(--primary);"></i>info@oroplastindo.com</p>
+      <p><i class="bi bi-clock-fill me-2" style="color:var(--primary);"></i>Senin – Jumat, 08.00 – 17.00 WIB</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 PT Oro Plastindo. All Rights Reserved. &nbsp;|&nbsp;
+       <a href="#">Kebijakan Privasi / Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Syarat &amp; Ketentuan / Terms &amp; Conditions</a></p>
+  </div>
+</footer>
+
+<button class="scroll-to-top"><i class="bi bi-chevron-up"></i></button>
+
+<!-- ========== MODAL LAMARAN ========== -->
+<div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));">
+        <h5 class="modal-title" id="applyModalLabel" style="color:#fff;font-weight:700;">
+          <i class="bi bi-file-earmark-person me-2"></i>Formulir Lamaran Kerja
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body p-4">
+        <form id="applyForm" novalidate>
+          <div class="mb-3">
+            <label for="applyNama" class="form-label fw-semibold">Nama Lengkap <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="applyNama" placeholder="Masukkan nama lengkap Anda" required>
+          </div>
+          <div class="row g-3 mb-3">
+            <div class="col-12 col-md-6">
+              <label for="applyEmail" class="form-label fw-semibold">Email <span class="text-danger">*</span></label>
+              <input type="email" class="form-control" id="applyEmail" placeholder="email@contoh.com" required>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="applyPhone" class="form-label fw-semibold">No. HP <span class="text-danger">*</span></label>
+              <input type="tel" class="form-control" id="applyPhone" placeholder="+62 812 3456 7890" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="applyPosisi" class="form-label fw-semibold">Posisi yang Dilamar <span class="text-danger">*</span></label>
+            <select class="form-select" id="applyPosisi" required>
+              <option value="" disabled selected>Pilih posisi...</option>
+              <option value="operator">Operator Produksi</option>
+              <option value="qc">Quality Control Inspector</option>
+              <option value="gudang">Staff Gudang</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="applyCV" class="form-label fw-semibold">Upload CV <span class="text-danger">*</span></label>
+            <input type="file" class="form-control" id="applyCV" accept=".pdf,.doc,.docx" required>
+            <div class="form-text">Format PDF atau DOC/DOCX, maksimum 5MB.</div>
+          </div>
+          <div class="mb-3">
+            <label for="applyCoverLetter" class="form-label fw-semibold">Cover Letter</label>
+            <textarea class="form-control" id="applyCoverLetter" rows="5" placeholder="Ceritakan mengapa Anda tertarik bergabung dengan PT Oro Plastindo dan apa yang membuat Anda menjadi kandidat yang tepat..."></textarea>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg">
+              <i class="bi bi-send me-2"></i>Kirim Lamaran
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  AOS.init({ duration: 900, once: true, offset: 80 });
+
+  // Application form submit
+  document.getElementById('applyForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const btn = this.querySelector('[type="submit"]');
+    btn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Lamaran Terkirim!';
+    btn.style.background = 'var(--success)';
+    setTimeout(() => {
+      this.reset();
+      btn.innerHTML = '<i class="bi bi-send me-2"></i>Kirim Lamaran';
+      btn.style.background = '';
+      const modal = bootstrap.Modal.getInstance(document.getElementById('applyModal'));
+      if (modal) modal.hide();
+    }, 3000);
+  });
+</script>
+</body>
+</html>
